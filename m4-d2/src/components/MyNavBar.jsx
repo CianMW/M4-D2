@@ -7,7 +7,7 @@ const MyNavBar = () => {
 
     return (
         <Navbar bg="danger" variant="dark">
-        <Navbar.Brand href="#">SumBooks</Navbar.Brand>
+        <Navbar.Brand href="#">StriveBooks</Navbar.Brand>
         <Nav className="justify-content-sm-between ">
         <Nav.Link href="#">Home</Nav.Link>
         <Nav.Link href="#">About</Nav.Link>
