@@ -5,12 +5,10 @@ import CommentArea from "./CommentArea";
 
 
 class SingleBook extends Component {
-    constructor(props){
-        super(props)
-    }
     state = {
         selected: false ,
-        Visible: true
+        Visible: true,
+        book: this.props.book
        
     }
 
@@ -18,7 +16,8 @@ class SingleBook extends Component {
     render () {
   return (
     <div className="d-flex justify-content-center">
-      {/* {console.log(this.props)} */}
+      {/*  {console.log(this.state.book)} 
+       {console.log("this is the Asin" + this.state.book.asin)} */}
       <Card
         key={this.props.book.asin}
         className="m-3 d-flex justify-content-center"
@@ -35,9 +34,9 @@ class SingleBook extends Component {
           <Card.Title >{this.props.book.title}</Card.Title>
         </Card.Body>
 
-        { this.state.selected && <CommentArea bookAsin={this.props.book} />} 
+        
       </Card>
-     
+      {this.state.selected && <CommentArea bookAsin={this.state.book.asin} />}
     </div>
         );
     };
