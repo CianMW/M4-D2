@@ -31,13 +31,13 @@ class CommentArea extends Component {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRiMWQ5ODRiYjUzZDAwMTViMTllZDAiLCJpYXQiOjE2MzIzMTI3MjgsImV4cCI6MTYzMzUyMjMyOH0.1mHsb-t2ReuCs2WsyDFcnIoddjZMG44_rc-BM_Catno",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRiMWQ5ODRiYjUzZDAwMTViMTllZDAiLCJpYXQiOjE2MzMzNTEzMzYsImV4cCI6MTYzNDU2MDkzNn0.foBYQppbMwHt27xv85g0bJnIlqqfTxEZYvCMtHGy918"  ,
           },
         }
       );
       let comments = await response.json();
       console.log("CommentArea Fetch return: " + comments + "end of fetch");
-      this.setState({...this.state, comment: {comments} });
+      this.setState({...this.state, comment: comments });
     } catch (err) {
       console.log("error! with fetch");
     }
@@ -51,7 +51,7 @@ class CommentArea extends Component {
         {console.log( this.props)}
         {console.log("COMMENT AREA LOG: " +this.state.asin)}
         <h3>Comment Area :</h3>
-        {/* <CommentList comment={this.state.comment} /> */}
+          <CommentList asin={this.state.asin} />  
         <AddComment asin={this.state.asin}/>
       </Container>
     );
